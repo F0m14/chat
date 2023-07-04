@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="login-container">
+        <h1>Login to Chat App</h1>
+        <form id="login-form">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      <div class="chat-app-container">
+        <header class="chat-header">
+          <h1>Chat App</h1>
+          <h3>Username: <span id="username">unknown</span></h3>
+          <button id="add-friend-btn">Add Friend</button>
+          <button id="logout-btn">Logout</button>
+        </header>
+        <div class="chat-main">
+          <div class="chat-sidebar">
+            <h2>Friends</h2>
+            <ul id="friend-list">
+              <!-- Friend list will be populated dynamically -->
+            </ul>
+          </div>
+          <div class="chat-window">
+            <div id="message-list">
+              <!-- Message list will be populated dynamically -->
+            </div>
+            <form id="message-form">
+              <input type="text" id="message-input" placeholder="Type your message..." required>
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
