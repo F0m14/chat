@@ -5,6 +5,11 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
+    <header class="chat-header" id="chat-header" style="display: none;">
+      <h1>Chat App</h1>
+      <button id="add-friend-btn">Add Friend</button>
+      <button id="logout-btn">Logout</button>
+    </header>
     <div class="chat-container">
       <div class="login-container">
         <h1>Login to Chat App</h1>
@@ -17,12 +22,6 @@
         </form>
       </div>
       <div class="chat-app-container">
-        <header class="chat-header">
-          <h1>Chat App</h1>
-          <h3>Username: <span id="username">unknown</span></h3>
-          <button id="add-friend-btn">Add Friend</button>
-          <button id="logout-btn">Logout</button>
-        </header>
         <div class="chat-main">
           <div class="chat-sidebar">
             <h2>Friends</h2>

@@ -7,13 +7,13 @@ const friendList = document.querySelector('#friend-list');
 const messageList = document.querySelector('#message-list');
 const messageForm = document.querySelector('#message-form');
 const messageInput = document.querySelector('#message-input');
-
-const Uusername = document.querySelector("#username");
+const chatHeader = document.querySelector('#chat-header');
 
 // Check if user is already logged in
 const isLoggedIn = () => {
   const username = localStorage.getItem('username');
   const password = localStorage.getItem('password');
+  chatHeader.style.display = 'flex';
   return username && password;
 }
 
@@ -36,12 +36,12 @@ const handleLogoutClick = () => {
   localStorage.removeItem('password');
   loginContainer.style.display = 'flex';
   chatAppContainer.style.display = 'none';
+  chatHeader.style.display = 'none';
 }
 
 // Render friend list
 const renderFriendList = () => {
   friendList.innerHTML = ''; // Clear the list first
-  Uusername.innerHTML = localStorage.getItem('username');
   const friends = JSON.parse(localStorage.getItem('friends')) || [];
   friends.forEach((friend) => {
     const li = document.createElement('li');

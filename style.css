@@ -7,6 +7,8 @@
 /* Chat app styles */
 .chat-container {
   height: 100vh;
+  display: flex;
+  flex-direction: column; /* Add flex-direction */
 }
 
 .login-container {
@@ -14,7 +16,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 100%; /* Remove justify-content */
   background: #363940; 
 }
 
@@ -25,14 +27,12 @@
 }
 
 .chat-header {
-  /*padding-top: 2.8rem;
-    padding-left: 8%;
-    padding-right: 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;*/
   background-color: #007bff;
   color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .chat-header h1 {
@@ -58,7 +58,6 @@
   display: flex;
   flex-grow: 1;
   overflow: hidden;
-  background: #363940;
 }
 
 .chat-sidebar {
@@ -94,7 +93,19 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  color: #fff;
+}
+
+input{
+  width: 79%;
+  border: none;
+  border-radius: 10px;
+}
+
+button{
+  width: 20%;
+  border: none;
+  border-radius: 10px;
+  background: #007bff;
 }
 
 #message-list {
@@ -117,4 +128,30 @@
 
 #message-list .message-received {
   background: Great;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+  .chat-sidebar {
+    display: none;
+    width: 0;
+  }
+  
+  .chat-main {
+    flex-direction: column;
+  }
+  
+  #message-list {
+    overflow-y: auto;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .chat-header {
+    padding: 1rem 2rem;
+  }
+  
+  .chat-sidebar {
+    display: block;
+  }
 }
